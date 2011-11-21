@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<div id="whoami">
+  <% if current_user %>
+    You are currently <%= current_user.name %>.<br />
+    <%= link_to "Sign out", signout_users_path, :method => :post %>
+  <% else %>
+    You are not currently signed in
+  <% end %>
+</div>
+
 <%= yield %>
 
 </body>

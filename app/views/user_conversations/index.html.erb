@@ -1,0 +1,9 @@
+<h1><%= @user.name %>'s Conversations</h1>
+
+<ul>
+  <% for conversation in @conversations do %>
+    <li class="<%= conversation.read? ? 'read' : 'unread' %>"><%= link_to conversation.subject, user_conversation_path(conversation.user, conversation) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Create a New Conversation", new_user_conversation_path(@user) %>

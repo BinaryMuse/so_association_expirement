@@ -1,0 +1,19 @@
+// Place all the styles related to the Conversations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.read {
+  font-style: italic;
+}
+
+.unread {
+  font-weight: bold;
+}
+
+.message {
+  border-bottom: 1px dotted gray;
+}
+
+.message_body {
+  margin: 10px 20px;
+}

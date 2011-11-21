@@ -1,0 +1,25 @@
+<h1>New Conversation</h1>
+
+<%= form_for(@conversation) do |f| %>
+  <div>
+    <%= f.label :to %><br />
+    <% for user in User.all do %>
+      <% next if user == current_user %>
+      <%= check_box_tag "user_conversation[to][]", user.id %> <%= user.name %><br />
+    <% end %>
+  </div>
+  <%= f.fields_for :conversation do |c| %>
+    <div>
+      <%= c.label :subject %>
+      <%= c.text_field :subject %>
+    </div>
+    <%= c.fields_for :messages do |m| %>
+      <div>
+        <%= m.label :body %><br />
+        <%= m.text_area :body %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
