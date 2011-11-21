@@ -10,10 +10,6 @@ class UserConversation < ActiveRecord::Base
   attr_accessor :to
   before_create :create_user_conversations
 
-  def all_users
-    UserConversation.where(:conversation_id => conversation).map(&:user).sort { |u1, u2| u1.name <=> u2.name }
-  end
-
 private
 
   def create_user_conversations
