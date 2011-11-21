@@ -3,7 +3,7 @@
 <div>
   <h2>People in this conversation:</h2>
   <ul>
-    <% for user in @conversation.conversation.users do %>
+    <% for user in @conversation.users do %>
       <li><%= link_to user.name, user %></li>
     <% end %>
   </ul>
